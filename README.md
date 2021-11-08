@@ -6,7 +6,8 @@
 # Area of ​​improvement of the app:
 
 - use getStaticPath to display conversations by id (avoid re-rendering the form & button in each conversation)
-- better writing  of my react components
+- possiblity to create new conversations 
+- better writing of my react components
 - Write tests for each components and containers (units tests, integration tests, end to end tests) to ensure that the app is reliable
 - Responsive for tablet and mobile
 
