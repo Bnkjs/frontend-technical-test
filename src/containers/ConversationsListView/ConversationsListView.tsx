@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from "react"
 import { ALL_MESSAGES_FROM_CONVERSATION_ID, ALL_USERS, POST_NEW_MESSAGE, USER_ID } from '../../utils/urlsUtils'
-import { MessagesView } from "../MessageView"
+import { MessagesView } from "../MessageView/MessageView"
 import FetchMessageFromConversationId, { PostNewMessage } from "../../services/messages"
 import style from '../../styles/Home.module.scss'
 import { getLoggedUserId } from "../../utils/getLoggedUserId"
