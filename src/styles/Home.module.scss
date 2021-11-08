@@ -1,0 +1,248 @@
+@import "mixins";
+$color-bg-mess-userLogged: rgb(183, 203, 255);
+$color-bg-mess-otherAuthor: rgb(247, 247, 247);
+$color-font-mess-userLogged: rgb(6, 55, 181);
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding: 4rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 2rem 0 1rem;
+  line-height: 1;
+  font-size: 2.5rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.description a,
+.description a:visited,
+.card a,
+.card a:visited {
+  color:black;
+  text-decoration: underline;
+}
+
+.card:hover a,
+.card:focus a,
+.card:active a {
+  color:#ec6e24;
+}
+
+.code {
+  background: #e1e1e1;
+  border-radius: 5px;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 1rem;
+}
+
+.card {
+  margin: .5rem;
+  flex-basis: 45%;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #ec6e24;
+  border-color: #ec6e24;
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+/* Home conv display  */
+.convDisplay{
+  position: relative;
+  width: 80%;
+  height: 100vh;
+  margin-bottom: 10%;
+}
+
+/* Component conversationsListView */
+
+#containerConv{
+  position: relative;
+  width: 100%;
+  // background-color: palegreen;
+  @include flex-center-column();
+}
+#convHeader{
+  background-color: whitesmoke;
+  margin: 1em 1em 1em;
+  border-radius: 0.3em;
+  padding: 1.5em 0;
+  cursor: pointer;
+  width: 80%;
+  transition: 100ms all ease-in-out;
+  &:hover{
+    border-left: 0.8em solid orange;
+  }
+  .recipNickname,.lastTimestampMess{
+    margin: 0;
+    margin-left: 2%;
+  }
+  .lastTimestampMess{
+    font-size: 0.7em;
+  }
+}
+
+#messagesDisplay{
+  width: 80%;
+  height: 100%;  
+}
+
+/* Component MessageView */
+
+#containerMess{
+  @include flex-center-column();
+  margin: 0;
+  padding: 0;
+}
+#messageContainer{
+  position: relative;
+  width: 100%;
+  border-left: 0.3em solid rgb(255, 192, 76);
+  .authorLoggedMess{
+    width: 100%;
+    .messBody{
+      position: relative;
+      background-color: $color-bg-mess-userLogged;
+      color: $color-font-mess-userLogged;
+      width: auto;
+      border-radius: 0.2em;
+      padding: 0.1em 1em 0.1rem;
+      margin-top: 0.1%;
+      margin-left: 50%;
+    }
+    .messTimestamp{
+        margin-left: 50%;
+    }
+  }
+  .otherAuthorMess{
+    width: 100%;
+    .messBody{
+      position: relative;
+      background-color: $color-bg-mess-otherAuthor;
+      width: auto;
+      border-radius: 0.2em;
+      padding: 0.1em 1em 0.1rem;
+      margin-top: 1%;
+      margin-right: 50%;
+    }
+  }
+  .messTimestamp{
+    position: relative;
+    font-size: 0.8em;
+    padding: 0;
+    color: $color-font-mess-userLogged;
+  }
+}
+
+#input_w_Btn{
+  position: relative;
+  width: 80%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+
+  @include flex-space-center();
+  .form{
+    width: 100%;
+    input{
+      width: 100%;
+      height: 2.5em;
+    }
+  }
+  .btn{
+    button{
+      display: inline-block;
+      border-radius: 3px;
+      padding: 0.5rem 0;
+      margin-left: 1em;
+      width: 11rem;
+      border: none;
+      cursor: pointer;
+      transition: .1s all ease-in-out;
+      &:hover{
+        background: orangered;
+        color: #8c8c8cfa
+      }
+    }
+  }
+}
+
+#navbar{
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  background-color: #fafafa;
+  @include flex-center-column();
+}
+.logo{
+  transform: scale(0.3);
+  list-style: none;
+}

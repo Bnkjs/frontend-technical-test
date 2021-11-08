@@ -3,3 +3,7 @@ export interface User {
   nickname: string
   token: string
 }
+
+export interface AuthorName{
+  authorName: string
+}
