@@ -1,7 +1,7 @@
 export interface Message {
-  id: number
-  conversationId: number
+  id?: number
+  conversationId?: number
   authorId: number
-  timestamp: number
+  timestamp?: string
   body: string
 }

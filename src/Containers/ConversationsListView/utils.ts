@@ -1,0 +1,1 @@
+export const userLoggedName = "Thibaut"
