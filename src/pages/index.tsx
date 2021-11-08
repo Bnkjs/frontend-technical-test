@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.scss'
 import React,{ useEffect, FC } from "react"
 import { GetServerSideProps } from "next"
 import { getLoggedUserId } from '../utils/getLoggedUserId'
-import {ConversationsListView} from '../containers/ConversationsListView/ConversationsListView'
+import {ConversationsListView} from '../containers/ConversationsListView'
 import FetchMessageFromConversationId from '../services/messages'
 import { ALL_CONVERSATIONS_FROM_USER_ID } from '../utils/urlsUtils'
 import { Conversation } from '../types/conversation'
